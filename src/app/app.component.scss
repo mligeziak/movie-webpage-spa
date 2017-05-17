@@ -5,5 +5,14 @@ body {
         text-align: center;
         margin-top: 50px;
         display: block;
+        color: $pink;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    body {
+        main {
+            display: none;
+        }
     }
 }

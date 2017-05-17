@@ -35,7 +35,17 @@ module.exports = {
                 test: /\.(css|scss)$/,
                 use: ['to-string-loader'].concat(ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: ['css-loader?sourceMap', 'sass-loader?sourceMap']
+                    use: [
+                        'css-loader?sourceMap',
+                        'sass-loader?sourceMap',
+                        {
+                            loader: 'sass-resources-loader',
+                            options: {
+                                resources: path.resolve(__dirname, '../src/assets/scss/main.scss'),
+                            },
+                        },
+                    ],
+
                 }))
             }
         ]
