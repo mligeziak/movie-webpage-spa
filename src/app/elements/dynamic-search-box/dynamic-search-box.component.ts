@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ApiService } from '../../services/api.service';
 
 @Component({
     selector: 'dynamic-search-box',
@@ -6,5 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class DynamicSearchBoxComponent {
     title: string = 'Dynamic search';
-    query: string = 'test';
+    query: string = '';
+    _apiService: ApiService;
+
+    constructor(_apiService: ApiService) {
+        this._apiService = _apiService;
+    }
 }
