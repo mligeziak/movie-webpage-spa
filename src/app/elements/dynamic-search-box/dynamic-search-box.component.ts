@@ -8,7 +8,7 @@ import { MoviesApiService } from '../../services/movies.api.service';
 export class DynamicSearchBoxComponent {
     title: string = 'Dynamic search';
     query: string = '';
-    results: string[] = [];
+    results: object = {};
     _moviesApiService: MoviesApiService;
 
     constructor(_moviesApiService: MoviesApiService) {

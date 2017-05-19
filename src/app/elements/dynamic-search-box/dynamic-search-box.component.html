@@ -1,5 +1,5 @@
 <h1>{{ title }}</h1>
 <input type="text" placeholder="Search movie..." [(ngModel)]="query" (ngModelChange)="dynamicSearch()">
 <ul>
-    <li *ngFor="let result of results">{{ result | json }}</li>
+    <li *ngFor="let result of results?.movies">{{ result | json }}</li>
 </ul>

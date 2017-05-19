@@ -9,13 +9,18 @@ import 'rxjs/add/operator/map';
 export class MoviesApiService {
     constructor(private http: Http) { }
 
-    searchMovie(query: string): Observable<string[]> {
+    searchMovie(query: string): Observable<object> {
         return this.http.get('http://movie.api.dev/movies/search/' + query + '.json').map(this.extractData).catch(this.handleError);
     };
 
     private extractData(res: Response) {
-        let body = res.json();
-        return body.movies;
+        let body = {};
+        try {
+            body = res.json();
+        }
+        catch(e) {
+        }
+        return body;
     }
 
     private handleError(error: Response | any) {
