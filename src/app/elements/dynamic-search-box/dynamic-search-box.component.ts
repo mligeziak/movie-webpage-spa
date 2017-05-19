@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ApiService } from '../../services/api.service';
+import { MoviesApiService } from '../../services/movies.api.service';
 
 @Component({
     selector: 'dynamic-search-box',
@@ -8,9 +8,16 @@ import { ApiService } from '../../services/api.service';
 export class DynamicSearchBoxComponent {
     title: string = 'Dynamic search';
     query: string = '';
-    _apiService: ApiService;
+    results: string[] = [];
+    _moviesApiService: MoviesApiService;
 
-    constructor(_apiService: ApiService) {
-        this._apiService = _apiService;
+    constructor(_moviesApiService: MoviesApiService) {
+        this._moviesApiService = _moviesApiService;
+    }
+
+    dynamicSearch() {
+        this._moviesApiService.searchMovie(this.query).subscribe(
+            results => this.results = results
+        );
     }
 }
