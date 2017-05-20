@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'user-register',
-    templateUrl: './user.register.component.html'
+    templateUrl: './user.signup.component.html'
 })
-export class UserRegisterComponent {
+export class UserSignupComponent {
     email: string;
     name: string;
     password: string;

@@ -10,7 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { DynamicSearchBoxComponent } from './elements/dynamic-search-box/dynamic-search-box.component';
 import { DynamicSearchBoxItemComponent } from './elements/dynamic-search-box/dynamic-search-box-item/dynamic-search-box-item.component';
 import { MovieComponent } from './movie/movie.component';
-import { UserRegisterComponent } from './user/register/user.register.component';
+import { UserSignupComponent } from './user/signup/user.signup.component';
 
 @NgModule({
     imports: [
@@ -26,7 +26,7 @@ import { UserRegisterComponent } from './user/register/user.register.component';
         DynamicSearchBoxComponent,
         DynamicSearchBoxItemComponent,
         MovieComponent,
-        UserRegisterComponent
+        UserSignupComponent
     ],
     bootstrap: [AppComponent]
 })
