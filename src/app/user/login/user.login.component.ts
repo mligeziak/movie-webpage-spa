@@ -2,12 +2,11 @@ import { Component, OnDestroy } from '@angular/core';
 import { UsersApiService } from '../../services/users.api.service';
 
 @Component({
-    selector: 'user-signup',
-    templateUrl: './user.signup.component.html'
+    selector: 'user-login',
+    templateUrl: './user.login.component.html'
 })
-export class UserSignupComponent implements OnDestroy {
+export class UserLoginComponent implements OnDestroy {
     email: string;
-    name: string;
     password: string;
     result: object = {};
     private subsription: any;
@@ -17,8 +16,8 @@ export class UserSignupComponent implements OnDestroy {
         this._usersApiService = _usersApiService;
     }
 
-    signUp() {
-        this.subsription = this._usersApiService.signUp(this.email, this.name, this.password).subscribe(
+    login() {
+        this.subsription = this._usersApiService.login(this.email, this.password).subscribe(
             result => this.result = result
         );
     }

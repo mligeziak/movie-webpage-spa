@@ -13,6 +13,10 @@ export class UsersApiService {
     signUp(email: string, name: string, password: string): Observable<object> {
         return this._http.post(this._config.apiUrl + 'appusers/signup.json', { email, name, password }).map(this.extractData).catch(this.handleError);
     };
+    
+    login(email: string, password: string): Observable<object> {
+        return this._http.post(this._config.apiUrl + 'appusers/login.json', { email, password }).map(this.extractData).catch(this.handleError);
+    };
 
     private extractData(res: Response) {
         let body = {};
