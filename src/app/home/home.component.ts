@@ -6,7 +6,4 @@ import { DynamicSearchBoxComponent } from '../elements/dynamic-search-box/dynami
     template: require('./home.component.html'),
     entryComponents: [DynamicSearchBoxComponent]
 })
-export class HomeComponent {
-    title: string = 'Home Page';
-    body: string = 'This is the home body';
-}
+export class HomeComponent { }

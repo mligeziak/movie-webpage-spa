@@ -8,7 +8,6 @@ import { DynamicSearchBoxItemComponent } from './dynamic-search-box-item/dynamic
     entryComponents: [DynamicSearchBoxItemComponent]
 })
 export class DynamicSearchBoxComponent implements OnDestroy {
-    title: string = 'Dynamic search';
     query: string = '';
     results: object = {};
     private subsription: any;

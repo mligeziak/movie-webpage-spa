@@ -1,5 +1,13 @@
-<h1>{{ title }}</h1>
-<input type="text" placeholder="Search movie..." [(ngModel)]="query" (ngModelChange)="dynamicSearch()">
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-3">Search movie</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or
+            information.</p>
+        <hr class="my-4">
+        <input type="text" placeholder="Search movie..." [(ngModel)]="query" (ngModelChange)="dynamicSearch()">
+    </div>
+</div>
+
 <ul>
     <dynamic-search-box-item *ngFor="let result of results?.movies" [movie]="result"></dynamic-search-box-item>
 </ul>
