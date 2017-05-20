@@ -8,10 +8,12 @@
 
                 <div class="movieInfo col-8">
                     <div class="movieHeader container-fluid">
-                        <h1>{{ movie?.Title }} ({{ movie?.Year }})</h1>
+                        <h1>
+                            {{ movie?.Title }} ({{ movie?.Year }}) <span *ngIf="movie?.totalSeasons !== undefined">[Seasons: {{ movie?.totalSeasons }}]</span>
+                        </h1>
                         <small>
                             {{ movie?.Rated }} | {{ movie?.Genre }} | {{ movie?.Runtime }} | {{ movie?.Released }}
-                    </small>
+                        </small>
                     </div>
                     <div class="movieRatings container-fluid">
                         <div class="row">
@@ -31,8 +33,8 @@
                         <p>Writer: {{ movie?.Writer }}</p>
                         <p>Actors: {{ movie?.Actors }}</p>
                         <p>Plot: {{ movie?.Plot }}</p>
-                        <p>Box Office: {{ movie?.BoxOffice }}</p>
-                        <p>Production: {{ movie?.Production }}</p>
+                        <p *ngIf="movie?.BoxOffice !== undefined">Box Office: {{ movie?.BoxOffice }}</p>
+                        <p *ngIf="movie?.BoxOffice !== undefined">Production: {{ movie?.Production }}</p>
                         <p>Language: {{ movie?.Language }}</p>
                         <p>Country: {{ movie?.Country }}</p>
                         <p>Awards: {{ movie?.Awards }}</p>
