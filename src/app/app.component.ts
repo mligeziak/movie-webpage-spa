@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MoviesApiService } from './services/movies.api.service'
+import { UsersApiService } from './services/users.api.service'
 import { ConfigService } from './services/config.service'
 
 @Component({
@@ -8,6 +9,7 @@ import { ConfigService } from './services/config.service'
     styleUrls: ['./app.component.scss'],
     providers: [
         MoviesApiService,
+        UsersApiService,
         ConfigService
     ]
 })
