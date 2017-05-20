@@ -8,6 +8,7 @@ import { routes } from './routes';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { DynamicSearchBoxComponent } from './elements/dynamic-search-box/dynamic-search-box.component';
+import { DynamicSearchBoxItemComponent } from './elements/dynamic-search-box/dynamic-search-box-item/dynamic-search-box-item.component';
 
 @NgModule({
     imports: [
@@ -20,7 +21,8 @@ import { DynamicSearchBoxComponent } from './elements/dynamic-search-box/dynamic
         AppComponent,
         HomeComponent,
         AboutComponent,
-        DynamicSearchBoxComponent
+        DynamicSearchBoxComponent,
+        DynamicSearchBoxItemComponent
     ],
     bootstrap: [AppComponent]
 })
