@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { DynamicSearchBoxComponent } from './elements/dynamic-search-box/dynamic-search-box.component';
 import { DynamicSearchBoxItemComponent } from './elements/dynamic-search-box/dynamic-search-box-item/dynamic-search-box-item.component';
+import { MovieComponent } from './movie/movie.component';
 
 @NgModule({
     imports: [
@@ -22,7 +23,8 @@ import { DynamicSearchBoxItemComponent } from './elements/dynamic-search-box/dyn
         HomeComponent,
         AboutComponent,
         DynamicSearchBoxComponent,
-        DynamicSearchBoxItemComponent
+        DynamicSearchBoxItemComponent,
+        MovieComponent
     ],
     bootstrap: [AppComponent]
 })

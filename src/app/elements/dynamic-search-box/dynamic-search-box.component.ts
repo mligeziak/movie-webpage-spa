@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { MoviesApiService } from '../../services/movies.api.service';
 import { DynamicSearchBoxItemComponent } from './dynamic-search-box-item/dynamic-search-box-item.component';
 
@@ -7,24 +7,30 @@ import { DynamicSearchBoxItemComponent } from './dynamic-search-box-item/dynamic
     template: require('./dynamic-search-box.component.html'),
     entryComponents: [DynamicSearchBoxItemComponent]
 })
-export class DynamicSearchBoxComponent {
+export class DynamicSearchBoxComponent implements OnDestroy {
     title: string = 'Dynamic search';
     query: string = '';
     results: object = {};
-    request: any;
-    _moviesApiService: MoviesApiService;
+    private subsription: any;
+    private _moviesApiService: MoviesApiService;
 
     constructor(_moviesApiService: MoviesApiService) {
         this._moviesApiService = _moviesApiService;
     }
 
     dynamicSearch() {
-        if(this.request != undefined) {
-            this.request.unsubscribe();
+        if (this.subsription != undefined) {
+            this.subsription.unsubscribe();
         }
 
-        this.request = this._moviesApiService.searchMovie(this.query).subscribe(
+        this.subsription = this._moviesApiService.searchMovie(this.query).subscribe(
             results => this.results = results
         );
+    }
+
+    ngOnDestroy() {
+        if (this.subsription != undefined) {
+            this.subsription.unsubscribe();
+        }
     }
 }

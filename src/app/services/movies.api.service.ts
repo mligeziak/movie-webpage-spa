@@ -13,6 +13,10 @@ export class MoviesApiService {
         return this.http.get('http://movie.api.dev/movies/search/' + query + '.json').map(this.extractData).catch(this.handleError);
     };
 
+    getMovieByImdbid(imdbid: string): Observable<object> {
+        return this.http.get('http://movie.api.dev/movies/getMovieByImdbid/' + imdbid + '.json').map(this.extractData).catch(this.handleError);
+    };
+
     private extractData(res: Response) {
         let body = {};
         try {
