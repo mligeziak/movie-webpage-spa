@@ -3,7 +3,7 @@ import { DynamicSearchBoxComponent } from '../elements/dynamic-search-box/dynami
 
 @Component({
     selector: 'home',
-    template: require('./home.component.html'),
+    templateUrl: './home.component.html',
     entryComponents: [DynamicSearchBoxComponent]
 })
 export class HomeComponent { }

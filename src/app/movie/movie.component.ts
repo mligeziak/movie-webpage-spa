@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { MoviesApiService } from '../services/movies.api.service';
 
 @Component({
-    selector: 'home',
-    template: require('./movie.component.html')
+    selector: 'movie',
+    templateUrl: './movie.component.html'
 })
 export class MovieComponent implements OnInit, OnDestroy {
     title: string = 'Movie title';
