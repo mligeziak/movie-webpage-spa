@@ -1,6 +1,7 @@
 <li>
     <a [routerLink]="['/movie', movie.imdbid]">
         <div>
+            <img src="{{movie.poster}}" alt="{{movie.title}} poster">
             <span>
                 {{ movie.title }} ({{ movie.year }}) 
                 <i>{{ movie.genre }}</i>
