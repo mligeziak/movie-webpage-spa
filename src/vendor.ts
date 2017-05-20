@@ -7,3 +7,7 @@ import '@angular/http';
 import '@angular/router';
 // RxJS
 import 'rxjs';
+//Bootstarp JS
+import 'jquery';
+import 'tether/dist/js/tether';
+import 'bootstrap/dist/js/bootstrap'
