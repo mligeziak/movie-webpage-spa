@@ -1,3 +1,11 @@
 <li>
-    <a [routerLink]="['/movie', movie.imdbid]">{{ movie | json }}</a>
+    <a [routerLink]="['/movie', movie.imdbid]">
+        <div>
+            <span>
+                {{ movie.title }} ({{ movie.year }}) 
+                <i>{{ movie.genre }}</i>
+            </span>
+            <p><small>{{ movie.director }}</small></p>
+        </div>
+    </a>
 </li>
