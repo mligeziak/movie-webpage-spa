@@ -32,7 +32,9 @@ export class MovieComponent implements OnInit, OnDestroy {
 
     loadMovieInfoByImdb(imdbid: any) {
         this.movieSubsription = this._moviesApiService.getMovieByImdbid(imdbid).subscribe(
-            movie => this.movie = movie
+            movie => {
+                this.movie = movie["movie"];
+            }
         );
     }
 
