@@ -4,7 +4,7 @@ import { DynamicSearchBoxItemComponent } from './dynamic-search-box-item/dynamic
 
 @Component({
     selector: 'dynamic-search-box',
-    template: require('./dynamic-search-box.component.html'),
+    templateUrl: './dynamic-search-box.component.html',
     entryComponents: [DynamicSearchBoxItemComponent]
 })
 export class DynamicSearchBoxComponent implements OnDestroy {
