@@ -2,3 +2,4 @@
 /.vscode
 /dist
 /npm-debug.log
+/src/app/services/config.service.ts
