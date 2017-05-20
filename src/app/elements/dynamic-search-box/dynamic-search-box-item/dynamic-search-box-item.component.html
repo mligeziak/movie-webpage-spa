@@ -1,1 +1,3 @@
-<li>{{ movie | json }}</li>
+<li>
+    <a [routerLink]="['/movie', movie.imdbid]">{{ movie | json }}</a>
+</li>
