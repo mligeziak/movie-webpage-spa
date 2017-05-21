@@ -28,6 +28,10 @@ export class ApiService {
         return this._http.post(this._config.apiUrl + 'appusers/login.json', { email, password }, { withCredentials: true }).map(this.extractData).catch(this.handleError);
     };
 
+    getAccountData(): Observable<object> {
+        return this._http.get(this._config.apiUrl + 'appusers/getAccountData.json', { withCredentials: true }).map(this.extractData).catch(this.handleError);
+    };
+
     private extractData(res: Response) {
         let body = {};
         try {

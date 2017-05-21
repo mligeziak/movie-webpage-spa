@@ -13,6 +13,7 @@ import { MovieComponent } from './movie/movie.component';
 import { UserSignupComponent } from './user/signup/user.signup.component';
 import { UserLoginComponent } from './user/login/user.login.component';
 import { UserLogoutComponent } from './user/logout/user.logout.component';
+import { UserAccountComponent } from './user/account/user.account.component';
 
 @NgModule({
     imports: [
@@ -30,7 +31,8 @@ import { UserLogoutComponent } from './user/logout/user.logout.component';
         MovieComponent,
         UserSignupComponent,
         UserLoginComponent,
-        UserLogoutComponent
+        UserLogoutComponent,
+        UserAccountComponent
     ],
     bootstrap: [AppComponent]
 })
