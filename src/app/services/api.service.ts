@@ -25,7 +25,7 @@ export class ApiService {
     };
 
     login(email: string, password: string): Observable<object> {
-        return this._http.post(this._config.apiUrl + 'appusers/login.json', { email, password }).map(this.extractData).catch(this.handleError);
+        return this._http.post(this._config.apiUrl + 'appusers/login.json', { email, password }, { withCredentials: true }).map(this.extractData).catch(this.handleError);
     };
 
     private extractData(res: Response) {
