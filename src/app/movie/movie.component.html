@@ -37,6 +37,11 @@
                 <p>Country: {{ movie?.Country }}</p>
                 <p>Awards: {{ movie?.Awards }}</p>
             </div>
+            <div class="actions">
+                <button [disabled]="addedToFavorites" type="button" class="btn btn-large btn-info" (click)="addToFavorites(movie?.imdbID)">
+                    {{ addedToFavorites ? 'Added to favorites' : 'Add to favorites' }}
+                </button>
+            </div>
         </div>
     </div>
     <div class="movie-body">

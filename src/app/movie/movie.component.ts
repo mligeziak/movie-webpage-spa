@@ -11,9 +11,11 @@ export class MovieComponent implements OnInit, OnDestroy {
     title: string = 'Movie title';
     imdbid: string;
     movie: any = {};
+    addedToFavorites: boolean = false;
     loaded: boolean = false;
     private subsription: any;
     private movieSubsription: any;
+    private addToFavoritesSubsription: any;
     private _route: ActivatedRoute;
     private _apiService: ApiService;
 
@@ -42,12 +44,23 @@ export class MovieComponent implements OnInit, OnDestroy {
         );
     }
 
+    addToFavorites(imdbid: string) {
+        this.addToFavoritesSubsription = this._apiService.addToFavorites(imdbid).subscribe(
+            addedToFavorites => {
+                this.addedToFavorites = addedToFavorites['saved'];
+            }
+        );
+    }
+
     ngOnDestroy() {
         if (this.subsription != undefined) {
             this.subsription.unsubscribe();
         }
         if (this.movieSubsription != undefined) {
             this.movieSubsription.unsubscribe();
+        }
+        if (this.addToFavoritesSubsription != undefined) {
+            this.addToFavoritesSubsription.unsubscribe();
         }
     }
 }
