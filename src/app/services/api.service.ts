@@ -36,6 +36,10 @@ export class ApiService {
         return this._http.get(this._config.apiUrl + 'appusers/addToFavorites/' + imdbid + '.json', { withCredentials: true }).map(this.extractData).catch(this.handleError);
     };
 
+    getMyFavorites(): Observable<object> {
+        return this._http.get(this._config.apiUrl + 'appusers/getMyFavorites.json', { withCredentials: true }).map(this.extractData).catch(this.handleError);
+    };
+
     private extractData(res: Response) {
         let body = {};
         try {

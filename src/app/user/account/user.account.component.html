@@ -3,3 +3,7 @@
     <strong>Name:</strong> {{ accountData.name }}<br/>
     <strong>Email:</strong> {{ accountData.email }}
 </p>
+<h2>My favorite movies:</h2>
+<div class="favorites">
+    <dynamic-search-box-item *ngFor="let movie of myFavorites?.favorites" [movie]="movie" class="col-lg-6 d-inline-block"></dynamic-search-box-item>
+</div>
