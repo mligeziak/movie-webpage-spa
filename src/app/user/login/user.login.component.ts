@@ -1,4 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 
 @Component({
@@ -11,9 +12,11 @@ export class UserLoginComponent implements OnDestroy {
     result: object = {};
     private subsription: any;
     private _apiService: ApiService;
+    private _router: Router;
 
-    constructor(_apiService: ApiService) {
+    constructor(_apiService: ApiService, _router: Router) {
         this._apiService = _apiService;
+        this._router = _router;
     }
 
     login() {
@@ -23,6 +26,7 @@ export class UserLoginComponent implements OnDestroy {
                 
                 if(this.result['loggedin'] == true) {
                     this._apiService.loggedIn = true;
+                    this._router.navigateByUrl('user/account');
                 }
             }
         );

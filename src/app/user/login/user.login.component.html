@@ -1,5 +1,6 @@
 <h1>Login</h1>
-<input type="text" class="form-control mr-sm-2" placeholder="E-mail" [(ngModel)]="email">
-<input type="password" class="form-control mr-sm-2" placeholder="Password" [(ngModel)]="password">
-<button type="button" class="btn btn-large btn-block btn-default" (click)="login()">Sign up</button>
-<p>{{ result | json }}</p>
+<div class="form-wrapper">
+    <input type="email" class="form-control mr-sm-2" placeholder="E-mail" [(ngModel)]="email">
+    <input type="password" class="form-control mr-sm-2" placeholder="Password" [(ngModel)]="password">
+    <button type="button" class="btn btn-large btn-block btn-info" (click)="login()">Login</button>
+</div>
