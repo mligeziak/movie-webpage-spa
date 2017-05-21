@@ -10,14 +10,16 @@ import { ApiService } from '../services/api.service';
 export class MovieComponent implements OnInit, OnDestroy {
     title: string = 'Movie title';
     imdbid: string;
-    movie: any = {};
+    movie: object = {};
     addedToFavorites: boolean = false;
     addedMovieRating: boolean = false;
+    flickRating: object = {};
     loaded: boolean = false;
     private subsription: any;
     private movieSubsription: any;
     private addToFavoritesSubsription: any;
     private addMovieRatingSubsription: any;
+    private getMovieRatingSubsription: any;
     private _route: ActivatedRoute;
     private _apiService: ApiService;
 
@@ -32,6 +34,15 @@ export class MovieComponent implements OnInit, OnDestroy {
                 this.imdbid = params['imdbid'];
 
                 this.loadMovieInfoByImdb(this.imdbid);
+                this.loadFlickRating(this.imdbid);
+            }
+        );
+    }
+
+    loadFlickRating(imdbid: string) {
+        this.getMovieRatingSubsription = this._apiService.getMovieRating(imdbid).subscribe(
+            flickRating => {
+                this.flickRating = flickRating['rating'][0];
             }
         );
     }
@@ -55,9 +66,11 @@ export class MovieComponent implements OnInit, OnDestroy {
     }
 
     addMovieRating(imdbid: string, rating: number) {
-        this.addToFavoritesSubsription = this._apiService.addMovieRating(imdbid, rating).subscribe(
+        this.addMovieRatingSubsription = this._apiService.addMovieRating(imdbid, rating).subscribe(
             addedMovieRating => {
                 this.addedMovieRating = addedMovieRating['saved'];
+                
+                this.loadFlickRating(this.imdbid);
             }
         );
     }

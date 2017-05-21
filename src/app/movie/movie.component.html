@@ -29,7 +29,7 @@
                     <div class="col-4">Rate movie:</div>
                 </div>
                 <div class="row">
-                    <div class="col-4">4.5</div>
+                    <div class="col-4">{{ flickRating?.avg }}</div>
                     <div class="col-4">
                         <div class="ratings" *ngIf="!addedMovieRating">
                             <a (click)="addMovieRating(movie?.imdbID, 1)">1</a>
