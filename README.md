@@ -24,6 +24,10 @@ Clone this repo and go to cloned directory. Then install essential dependencies.
 To start local server run start script
 
     npm start
+    
+If you want to build page and not running local server.
+
+    npm run build
 
 And to enter the website go to [localhost on port 8080](http://localhost:8080).
 
