@@ -8,6 +8,7 @@ import { MovieItemComponent } from '../movie-item/movie-item.component';
     entryComponents: [MovieItemComponent]
 })
 export class DynamicSearchBoxComponent implements OnDestroy {
+    searchPlaceholder: string = "Find movie or TV show...";
     query: string = '';
     results: object = {};
     private subsription: any;
