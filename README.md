@@ -37,4 +37,4 @@ And to enter the website go to [localhost on port 8080](http://localhost:8080).
 
 Hubert Kurek, 187127, KrDZIs3011Io, dzienne
 
-Michał Ligęza, 187127, KrDZIs3011Io, dzienne
+Michał Ligęza, 187226, KrDZIs3011Io, dzienne
