@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MoviesApiService } from '../services/movies.api.service';
+import { ApiService } from '../services/api.service';
 
 @Component({
     selector: 'movie',
@@ -15,11 +15,11 @@ export class MovieComponent implements OnInit, OnDestroy {
     private subsription: any;
     private movieSubsription: any;
     private _route: ActivatedRoute;
-    private _moviesApiService: MoviesApiService;
+    private _apiService: ApiService;
 
-    constructor(_route: ActivatedRoute, _moviesApiService: MoviesApiService) {
+    constructor(_route: ActivatedRoute, _apiService: ApiService) {
         this._route = _route;
-        this._moviesApiService = _moviesApiService
+        this._apiService = _apiService
     }
 
     ngOnInit() {
@@ -33,7 +33,7 @@ export class MovieComponent implements OnInit, OnDestroy {
     }
 
     loadMovieInfoByImdb(imdbid: any) {
-        this.movieSubsription = this._moviesApiService.getMovieByImdbid(imdbid).subscribe(
+        this.movieSubsription = this._apiService.getMovieByImdbid(imdbid).subscribe(
             movie => {
                 this.movie = movie["movie"];
 

@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { UsersApiService } from '../../services/users.api.service';
+import { ApiService } from '../../services/api.service';
 
 @Component({
     selector: 'user-login',
@@ -10,14 +10,14 @@ export class UserLoginComponent implements OnDestroy {
     password: string;
     result: object = {};
     private subsription: any;
-    private _usersApiService: UsersApiService;
+    private _apiService: ApiService;
 
-    constructor(_usersApiService: UsersApiService) {
-        this._usersApiService = _usersApiService;
+    constructor(_apiService: ApiService) {
+        this._apiService = _apiService;
     }
 
     login() {
-        this.subsription = this._usersApiService.login(this.email, this.password).subscribe(
+        this.subsription = this._apiService.login(this.email, this.password).subscribe(
             result => this.result = result
         );
     }

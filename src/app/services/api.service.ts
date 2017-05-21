@@ -7,7 +7,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class MoviesApiService {
+export class ApiService {
     constructor(private _http: Http, private _config: ConfigService) { }
 
     searchMovie(query: string): Observable<object> {
@@ -16,6 +16,14 @@ export class MoviesApiService {
 
     getMovieByImdbid(imdbid: string): Observable<object> {
         return this._http.get(this._config.apiUrl + 'movies/getMovieByImdbid/' + imdbid + '.json').map(this.extractData).catch(this.handleError);
+    };
+
+    signUp(email: string, name: string, password: string): Observable<object> {
+        return this._http.post(this._config.apiUrl + 'appusers/signup.json', { email, name, password }).map(this.extractData).catch(this.handleError);
+    };
+
+    login(email: string, password: string): Observable<object> {
+        return this._http.post(this._config.apiUrl + 'appusers/login.json', { email, password }).map(this.extractData).catch(this.handleError);
     };
 
     private extractData(res: Response) {

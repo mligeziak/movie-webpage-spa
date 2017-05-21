@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { MoviesApiService } from '../../services/movies.api.service';
+import { ApiService } from '../../services/api.service';
 import { DynamicSearchBoxItemComponent } from './dynamic-search-box-item/dynamic-search-box-item.component';
 
 @Component({
@@ -11,10 +11,10 @@ export class DynamicSearchBoxComponent implements OnDestroy {
     query: string = '';
     results: object = {};
     private subsription: any;
-    private _moviesApiService: MoviesApiService;
+    private _apiService: ApiService;
 
-    constructor(_moviesApiService: MoviesApiService) {
-        this._moviesApiService = _moviesApiService;
+    constructor(_apiService: ApiService) {
+        this._apiService = _apiService;
     }
 
     dynamicSearch() {
@@ -22,7 +22,7 @@ export class DynamicSearchBoxComponent implements OnDestroy {
             this.subsription.unsubscribe();
         }
 
-        this.subsription = this._moviesApiService.searchMovie(this.query).subscribe(
+        this.subsription = this._apiService.searchMovie(this.query).subscribe(
             results => this.results = results
         );
     }
