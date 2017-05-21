@@ -8,6 +8,6 @@
     </div>
 </div>
 
-<ul>
-    <dynamic-search-box-item *ngFor="let result of results?.movies" [movie]="result"></dynamic-search-box-item>
-</ul>
+<div class="results">
+    <dynamic-search-box-item *ngFor="let result of results?.movies" [movie]="result" class="col-lg-6 d-inline-block"></dynamic-search-box-item>
+</div>

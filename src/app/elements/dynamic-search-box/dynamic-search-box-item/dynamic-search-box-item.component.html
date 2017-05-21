@@ -1,16 +1,19 @@
-<li>
+<div class="dynamic-search-box-item">
     <a [routerLink]="['/movie', movie.imdbid]">
-        <div class="container">
-            <div class="row">
-                <div class="col-6 col-md4">
-                    <img src="{{movie.poster}}" alt="{{movie.title}} poster" class="img-thumbnail">
-                </div>
-                <div class="col col-md8">
-                    {{ movie.title }} ({{ movie.year }})
-                    <i>{{ movie.genre }}</i>
-                    <p><small>{{ movie.director }}</small></p>
+        <div class="card">
+            <div class="card-block">
+                <div class="row">
+                    <div class="col-4">
+                        <img *ngIf="movie.poster != ''" src="{{movie.poster}}" alt="{{movie.title}} poster" class="img-thumbnail">
+                        <img *ngIf="movie.poster == ''" src="../../../../assets/images/no-poster.png" alt="no-poster" class="img-thumbnail">
+                    </div>
+                    <div class="col-8">
+                        {{ movie.title }} ({{ movie.year }})
+                        <i>{{ movie.genre }}</i>
+                        <p><small>{{ movie.director }}</small></p>
+                    </div>
                 </div>
             </div>
         </div>
     </a>
-</li>
+</div>
