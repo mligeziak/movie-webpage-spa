@@ -11,4 +11,10 @@ import { ConfigService } from './services/config.service'
         ConfigService
     ]
 })
-export class AppComponent { }
+export class AppComponent {
+    _apiService: ApiService;
+
+    constructor(_apiService: ApiService) {
+        this._apiService = _apiService;
+    }
+}

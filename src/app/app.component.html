@@ -13,11 +13,17 @@
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/about']">About</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" *ngIf="!_apiService.loggedIn">
                 <a class="nav-link" [routerLink]="['/user/signup']">Sign up</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" *ngIf="!_apiService.loggedIn">
                 <a class="nav-link" [routerLink]="['/user/login']">Login</a>
+            </li>
+            <li class="nav-item" *ngIf="_apiService.loggedIn">
+                <a class="nav-link" [routerLink]="['/user/account']">My Account</a>
+            </li>
+            <li class="nav-item" *ngIf="_apiService.loggedIn">
+                <a class="nav-link" [routerLink]="['/user/logout']">Logout</a>
             </li>
         </ul>
     </div>

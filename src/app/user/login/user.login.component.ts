@@ -18,7 +18,13 @@ export class UserLoginComponent implements OnDestroy {
 
     login() {
         this.subsription = this._apiService.login(this.email, this.password).subscribe(
-            result => this.result = result
+            result => {
+                this.result = result;
+                
+                if(this.result['loggedin'] == true) {
+                    this._apiService.loggedIn = true;
+                }
+            }
         );
     }
 

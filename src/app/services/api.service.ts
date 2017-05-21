@@ -8,6 +8,8 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ApiService {
+    loggedIn: boolean = false;
+
     constructor(private _http: Http, private _config: ConfigService) { }
 
     searchMovie(query: string): Observable<object> {
