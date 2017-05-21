@@ -12,6 +12,7 @@ import { DynamicSearchBoxItemComponent } from './elements/dynamic-search-box/dyn
 import { MovieComponent } from './movie/movie.component';
 import { UserSignupComponent } from './user/signup/user.signup.component';
 import { UserLoginComponent } from './user/login/user.login.component';
+import { UserLogoutComponent } from './user/logout/user.logout.component';
 
 @NgModule({
     imports: [
@@ -28,7 +29,8 @@ import { UserLoginComponent } from './user/login/user.login.component';
         DynamicSearchBoxItemComponent,
         MovieComponent,
         UserSignupComponent,
-        UserLoginComponent
+        UserLoginComponent,
+        UserLogoutComponent
     ],
     bootstrap: [AppComponent]
 })
