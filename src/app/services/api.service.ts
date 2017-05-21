@@ -17,27 +17,45 @@ export class ApiService {
     };
 
     getMovieByImdbid(imdbid: string): Observable<object> {
-        return this._http.get(this._config.apiUrl + 'movies/getMovieByImdbid/' + imdbid + '.json').map(this.extractData).catch(this.handleError);
+        return this._http.get(this._config.apiUrl + 'movies/getMovieByImdbid/' + imdbid + '.json')
+                    .map(this.extractData)
+                    .catch(this.handleError);
     };
 
     signUp(email: string, name: string, password: string): Observable<object> {
-        return this._http.post(this._config.apiUrl + 'appusers/signup.json', { email, name, password }).map(this.extractData).catch(this.handleError);
+        return this._http.post(this._config.apiUrl + 'appusers/signup.json', { email, name, password })
+                    .map(this.extractData)
+                    .catch(this.handleError);
     };
 
     login(email: string, password: string): Observable<object> {
-        return this._http.post(this._config.apiUrl + 'appusers/login.json', { email, password }, { withCredentials: true }).map(this.extractData).catch(this.handleError);
+        return this._http.post(this._config.apiUrl + 'appusers/login.json', { email, password }, { withCredentials: true })
+                    .map(this.extractData)
+                    .catch(this.handleError);
     };
 
     getAccountData(): Observable<object> {
-        return this._http.get(this._config.apiUrl + 'appusers/getAccountData.json', { withCredentials: true }).map(this.extractData).catch(this.handleError);
+        return this._http.get(this._config.apiUrl + 'appusers/getAccountData.json', { withCredentials: true })
+                    .map(this.extractData)
+                    .catch(this.handleError);
     };
 
     addToFavorites(imdbid: string): Observable<object> {
-        return this._http.get(this._config.apiUrl + 'appusers/addToFavorites/' + imdbid + '.json', { withCredentials: true }).map(this.extractData).catch(this.handleError);
+        return this._http.get(this._config.apiUrl + 'appusers/addToFavorites/' + imdbid + '.json', { withCredentials: true })
+                    .map(this.extractData)
+                    .catch(this.handleError);
     };
 
     getMyFavorites(): Observable<object> {
-        return this._http.get(this._config.apiUrl + 'appusers/getMyFavorites.json', { withCredentials: true }).map(this.extractData).catch(this.handleError);
+        return this._http.get(this._config.apiUrl + 'appusers/getMyFavorites.json', { withCredentials: true })
+                    .map(this.extractData)
+                    .catch(this.handleError);
+    };
+
+    addMovieRating(imdbid: string, rating: number): Observable<object> {
+        return this._http.get(this._config.apiUrl + 'appusers/addMovieRating' + '/' + imdbid + '/' + rating + '.json', { withCredentials: true })
+                    .map(this.extractData)
+                    .catch(this.handleError);
     };
 
     private extractData(res: Response) {

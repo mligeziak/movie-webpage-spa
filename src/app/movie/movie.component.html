@@ -15,14 +15,33 @@
             </div>
             <div class="movie-ratings">
                 <div class="row">
-                    <div class="col col-4" *ngIf="movie?.Ratings.length > 0">{{ movie?.Ratings[0].Source }}</div>
-                    <div class="col col-4" *ngIf="movie?.Ratings.length > 1">{{ movie?.Ratings[1].Source }}</div>
-                    <div class="col col-4" *ngIf="movie?.Ratings.length > 2">{{ movie?.Ratings[2].Source }}</div>
+                    <div class="col-4" *ngIf="movie?.Ratings.length > 0">{{ movie?.Ratings[0].Source }}</div>
+                    <div class="col-4" *ngIf="movie?.Ratings.length > 1">{{ movie?.Ratings[1].Source }}</div>
+                    <div class="col-4" *ngIf="movie?.Ratings.length > 2">{{ movie?.Ratings[2].Source }}</div>
                 </div>
                 <div class="row">
-                    <div class="col col-4" *ngIf="movie?.Ratings.length > 0">{{ movie?.Ratings[0].Value }}</div>
-                    <div class="col col-4" *ngIf="movie?.Ratings.length > 1">{{ movie?.Ratings[1].Value }}</div>
-                    <div class="col col-4" *ngIf="movie?.Ratings.length > 2">{{ movie?.Ratings[2].Value }}</div>
+                    <div class="col-4" *ngIf="movie?.Ratings.length > 0">{{ movie?.Ratings[0].Value }}</div>
+                    <div class="col-4" *ngIf="movie?.Ratings.length > 1">{{ movie?.Ratings[1].Value }}</div>
+                    <div class="col-4" *ngIf="movie?.Ratings.length > 2">{{ movie?.Ratings[2].Value }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-4">Flick rating</div>
+                    <div class="col-4">Rate movie:</div>
+                </div>
+                <div class="row">
+                    <div class="col-4">4.5</div>
+                    <div class="col-4">
+                        <div class="ratings" *ngIf="!addedMovieRating">
+                            <a (click)="addMovieRating(movie?.imdbID, 1)">1</a>
+                            <a (click)="addMovieRating(movie?.imdbID, 2)">2</a>
+                            <a (click)="addMovieRating(movie?.imdbID, 3)">3</a>
+                            <a (click)="addMovieRating(movie?.imdbID, 4)">4</a>
+                            <a (click)="addMovieRating(movie?.imdbID, 5)">5</a>
+                        </div>
+                        <div class="ratings" *ngIf="addedMovieRating">
+                            Saved
+                        </div>
+                    </div>
                 </div>
             </div>
 

@@ -1,6 +1,16 @@
 .movie-component {
     .movie-ratings {
         margin-top: 12px;
+        .ratings {
+            a {
+                cursor: pointer;
+                color: #23b8e4;
+                &:hover {
+                    color: #177c9a;
+                    text-decoration: underline;
+                }
+            }
+        }
     }
 
     .movie-details {
