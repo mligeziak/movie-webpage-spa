@@ -1,5 +1,7 @@
 # Flick - Movie Webpage SPA
 
+Link to [Flick](http://flick.ct8.pl/)
+
 ## Aim
 
 This application is for people, who want to have all essential informations about movie in one place, especially ratings from IMDb, Rotten Tomatoes and MetaCritic.
