@@ -4,12 +4,14 @@ import { MoviesApiService } from '../services/movies.api.service';
 
 @Component({
     selector: 'movie',
-    templateUrl: './movie.component.html'
+    templateUrl: './movie.component.html',
+    styleUrls: ['./movie.component.scss']
 })
 export class MovieComponent implements OnInit, OnDestroy {
     title: string = 'Movie title';
     imdbid: string;
     movie: any = {};
+    loaded: boolean = false;
     private subsription: any;
     private movieSubsription: any;
     private _route: ActivatedRoute;
@@ -34,6 +36,8 @@ export class MovieComponent implements OnInit, OnDestroy {
         this.movieSubsription = this._moviesApiService.getMovieByImdbid(imdbid).subscribe(
             movie => {
                 this.movie = movie["movie"];
+
+                this.loaded = true;
             }
         );
     }
