@@ -1,11 +1,11 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-import { DynamicSearchBoxItemComponent } from './dynamic-search-box-item/dynamic-search-box-item.component';
+import { MovieItemComponent } from '../movie-item/movie-item.component';
 
 @Component({
     selector: 'dynamic-search-box',
     templateUrl: './dynamic-search-box.component.html',
-    entryComponents: [DynamicSearchBoxItemComponent]
+    entryComponents: [MovieItemComponent]
 })
 export class DynamicSearchBoxComponent implements OnDestroy {
     query: string = '';

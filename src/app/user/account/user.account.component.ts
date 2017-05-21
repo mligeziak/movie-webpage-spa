@@ -1,11 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-import { DynamicSearchBoxItemComponent } from '../../elements/dynamic-search-box/dynamic-search-box-item/dynamic-search-box-item.component';
+import { MovieItemComponent } from '../../elements/movie-item/movie-item.component';
 
 @Component({
     selector: 'user-account',
     templateUrl: './user.account.component.html',
-    entryComponents: [DynamicSearchBoxItemComponent]
+    entryComponents: [MovieItemComponent]
 })
 export class UserAccountComponent implements OnInit, OnDestroy {
     email: string;

@@ -9,5 +9,5 @@
 </div>
 
 <div class="results">
-    <dynamic-search-box-item *ngFor="let result of results?.movies" [movie]="result" class="col-lg-6 d-inline-block"></dynamic-search-box-item>
+    <movie-item *ngFor="let movie of results?.movies" [movie]="movie" class="col-lg-6 d-inline-block"></movie-item>
 </div>

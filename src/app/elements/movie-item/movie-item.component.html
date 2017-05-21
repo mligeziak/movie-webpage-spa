@@ -1,11 +1,11 @@
-<div class="dynamic-search-box-item">
+<div class="movie-item">
     <a [routerLink]="['/movie', movie.imdbid]">
         <div class="card">
             <div class="card-block">
                 <div class="row">
                     <div class="col-4">
                         <img *ngIf="movie.poster != ''" src="{{movie.poster}}" alt="{{movie.title}} poster" class="img-thumbnail">
-                        <img *ngIf="movie.poster == ''" src="../../../../assets/images/no-poster.png" alt="no-poster" class="img-thumbnail">
+                        <img *ngIf="movie.poster == ''" src="../../../assets/images/no-poster.png" alt="no-poster" class="img-thumbnail">
                     </div>
                     <div class="col-8">
                         {{ movie.title }} ({{ movie.year }})
